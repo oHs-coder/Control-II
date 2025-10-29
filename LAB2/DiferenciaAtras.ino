@@ -136,7 +136,7 @@ ISR(INT3_vect) {
 // === Interrupción del Timer1 cada 8 ms ===
 ISR(TIMER1_COMPA_vect) {
   // Leer la referencia (señal de A0)
-  refSignal = ((analogRead(dirInputPin) * (5.0 / 1023.0)) - 2.6) * 4.2;
+  refSignal = ((analogRead(dirInputPin) * (5.0 / 1023.0)) - 2.65) * 4.2;
 
   // Calcular el error entre referencia y velocidad medida
   e_k = refSignal - (lastSpeed / 2.1);  // escalar velocidad a 0–5V aprox.
